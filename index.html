@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Card Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+</head>
+
+<body>
+  <h1>Custom Card Generator</h1>
+  <form id="cardForm">
+    <label for="cardName">Card Name:</label>
+    <input type="text" id="cardName" name="cardName" value="Test Name" required><br><br>
+
+    <label for="cardWeight">Card Weight:</label>
+    <input type="number" id="cardWeight" name="cardWeight" value="0" required><br><br>
+
+    <label for="cardClass">Card Class:</label>
+    <select id="cardClass" name="cardClass" required>
+      <option value="Darkness">Darkness</option>
+      <option value="Nature">Nature</option>
+      <option value="Fire">Fire</option>
+      <option value="Water">Water</option>
+      <option value="Light">Light</option>
+      <option value="Neutral" selected>Neutral</option>
+    </select><br><br>
+
+    <label for="cardRarity">Card Rarity:</label>
+    <select id="cardRarity" name="cardRarity" required>
+      <option value="Common" selected>Common</option>
+      <option value="Rare">Rare</option>
+      <option value="Epic">Epic</option>
+      <option value="Legendary">Legendary</option>
+    </select><br><br>
+
+    <label for="cardImage">Card Image (Scale it to 300x400 or equivalent, my code doesn't work XD):</label>
+    <input type="file" id="cardImage" name="cardImage" accept="image/*" required><br><br>
+
+    <label for="cardEffect">Card Effect (Use [enter] when new line needed):</label>
+    <textarea id="cardEffect" name="cardEffect"></textarea><br><br>
+
+    <label for="cardPower">Card Power:</label>
+    <input type="text" id="cardPower" name="cardPower"><br><br>
+
+    <label for="cardGroup">Card Group:</label>
+    <input type="text" id="cardGroup" name="cardGroup"><br><br>
+
+    <input type="submit" value="Generate Card">
+  </form>
+
+  <div id="cardOutput" style="display: none;">
+    <h2>Generated Card</h2>
+    <canvas id="generatedCanvas" style="border:1px solid black;"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
